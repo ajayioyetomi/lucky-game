@@ -1,0 +1,140 @@
+:root {
+  --back1: rgba(18, 3, 22, 0.85);
+  --game-back: rgba(255, 255, 255, 1);
+  --inp-width: var(--nav-width);
+}
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+.section > div:nth-child(1) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background-image: url("../images/img1.jpg"); */
+  background-size: cover;
+  top: 0;
+  opacity: 0.8;
+}
+.section > div:nth-child(2) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--back1);
+}
+
+.section > div:nth-child(3) {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  padding-top: 70px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.section > div:nth-child(3) > div:first-of-type {
+  width: var(--nav-width);
+  color: var(--white-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.section > div:nth-child(3) > div:nth-of-type(2) {
+  width: var(--inp-width);
+  background-color: var(--game-back);
+  padding: 30px 20px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.3),
+    -1px -1px 8px 1px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section > div:nth-child(3) > span {
+  position: fixed;
+  top: calc(100vh - 100px);
+  left: 10px;
+  color: var(--white-color);
+  z-index: 1000;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.headPara {
+  font-size: 1.5rem;
+  color: var(--dark-purple);
+  font-weight: 500;
+  margin: 0;
+}
+
+.guessDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.guessDiv > p {
+  margin: 0;
+  height: 40px;
+  width: 100%;
+  transition: color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  font-size: 1.6rem;
+}
+
+.guessDiv > label {
+  width: 100%;
+}
+
+.guessDiv > label > input {
+  width: 100%;
+  border: 1px solid var(--purple-color);
+  border-radius: 8px;
+  padding: 10px 2px 10px 10px;
+  font-size: 1.4rem;
+  outline: none !important;
+}
+
+.guessDiv > label > input::placeholder {
+  color: var(--purple-color) !important;
+}
+.guessDiv > label > input::-moz-placeholder {
+  color: var(--purple-color) !important;
+}
+
+.guessDiv > button {
+  width: 100%;
+  padding: 10px 0px;
+  text-align: center;
+  background-color: var(--purple-color);
+  color: var(--white-color);
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  :root {
+    --inp-width: max(500px, 50%);
+  }
+}
+@media only screen and (max-width: 600px) {
+  :root {
+    --inp-width: max(400px, 70%);
+  }
+}
+@media only screen and (max-width: 500px) {
+  :root {
+    --inp-width: max(320px, 80%);
+  }
+}

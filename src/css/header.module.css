@@ -1,0 +1,71 @@
+:root {
+  --nav-width: 80%;
+  --purple-color: #811eba;
+  --dark-purple: rgb(30, 7, 44);
+  --nav-back: #fff;
+  --blue-color: #428bca;
+  --white-color: #fff;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header > nav {
+  width: var(--nav-width);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  height: 100%;
+  align-items: center;
+  background-color: var(--nav-back);
+  border-radius: 0 0 15px 15px;
+  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.4);
+}
+
+.header > nav > div:nth-child(1) > span {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--dark-purple);
+}
+
+.header > nav > div:nth-child(1) > span > img {
+  width: 70px;
+}
+
+.header > nav > div:nth-child(2) > span {
+  font-size: 3rem;
+  color: var(--purple-color);
+  cursor: pointer;
+}
+
+.header > div {
+  position: absolute;
+  right: 20px;
+  display: flex;
+}
+.header > div > span {
+  color: var(--white-color);
+  font-size: 3rem;
+  cursor: pointer;
+  display: flex;
+  /* box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6); */
+}
+
+.header > div > span > svg {
+  box-shadow: -1px -1px 15px 2px rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 767px) {
+  :root {
+    --nav-width: 92%;
+  }
+}
